@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "color-temperature": "^0.2.7",
     "next": "^13.0.0",
     "p5": "^1.5.0",
     "react": "^18.2.0",
