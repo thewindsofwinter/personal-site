@@ -1,13 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import P5Wrapper from 'react-p5-wrapper';
+import sketch from './sketches/sketch';
 
 export default function Home() {
-  
-  const stars = (canvas) => {
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0, 0, 150, 75);
-  };
   
   return (
     <div className="bg-ink min-h-screen">
@@ -17,33 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <StarryNight />
+      <P5Wrapper sketch={sketch} className="absolute left-0 top-0 w-screen h-screen"></P5Wrapper>
       <h1 className="text-3xl font-bold underline text-starlight">
         Hello world!
       </h1>
     </div>
   )
-}
-
-class StarryNight extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-     const img = new Image();
-      img.onload =() => {
-        // image  has been loaded
-        this.imagestore()
-      };
-
-      img.src = 'image_7.jpg';
-  }
-
-  render() {
-    return (
-      <canvas className="absolute top-0 left-0 w-screen h-screen" onLoad={() => { stars(document.getElementsByTagName("canvas")[0]); }}>
-      </canvas>
-    );
-  }
 }
