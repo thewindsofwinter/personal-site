@@ -62,6 +62,7 @@ class Star {
   display(p) {
     p.noStroke();
     p.fill(this.color);
+    p.opacity(this.opacity);
     p.ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
