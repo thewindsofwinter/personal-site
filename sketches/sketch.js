@@ -37,7 +37,8 @@ class Star {
     this.diameter = size;
     this.x = p.random(size + 10, p.windowWidth - size - 10);
     this.y = p.random(size + 10, p.windowHeight - size - 10);
-    this.color = p.color(p.random(255), p.random(255), 0);
+    this.red = p.random(255);
+    this.green = p.random(255);
     this.opacity = 1;
     this.twinkleRate = p.random(-0.01, 0.01);
 
@@ -61,8 +62,7 @@ class Star {
 
   display(p) {
     p.noStroke();
-    p.fill(this.color);
-    p.opacity(this.opacity);
+    p.fill(this.red, this.green, 0, this.opacity);
     p.ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
