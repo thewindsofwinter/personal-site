@@ -10,7 +10,16 @@ export default function sketch(p){
 
       sizeBracket = Math.min(p.windowWidth / 5, p.windowHeight / 5);
       bracketCount = 1;
-      stars.push(new Star(p, sizeBracket));
+      while(sizeBracket > 1) {
+        let createdCount = 0;
+        while(createdCount < bracketCount) {
+          stars.push(new Star(p, sizeBracket));
+          createdCount++;
+        }
+
+        sizeBracket /= 2;
+        bracketCount *= 4;
+      }
 
       p.noStroke();
     }
@@ -39,20 +48,20 @@ class Star {
     this.y = p.random(size + 10, p.windowHeight - size - 10);
     this.red = p.random(255);
     this.green = p.random(255);
-    this.opacity = 1;
-    this.twinkleRate = p.random(-0.01, 0.01);
+    this.opacity = 255;
+    this.twinkleRate = p.random(-0.1, 0.1);
 
     console.log(this.x + " " + this.y + " " + this.twinkleRate);
     console.log(this.color);
   }
 
   twinkle() {
-    if(this.opacity > 1) {
-      this.opacity = 1;
+    if(this.opacity > 255) {
+      this.opacity = 255;
       this.twinkleRate = -this.twinkleRate;
     }
-    else if(this.opacity < 0.9) {
-      this.opacity = 0.9;
+    else if(this.opacity < 200) {
+      this.opacity = 200;
       this.twinkleRate = -this.twinkleRate;
     }
     else {
