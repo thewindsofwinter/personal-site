@@ -34,9 +34,9 @@ export default function sketch(p){
 
 class Star {
   constructor(p, size) {
-    this.x = p.random(p.windowWidth);
-    this.y = p.random(p.windowHeight);
     this.diameter = size;
+    this.x = p.random(size + 10, p.windowWidth - size - 10);
+    this.y = p.random(size + 10, p.windowHeight - size - 10);
     this.color = p.color(p.random(255), p.random(255), 0);
     this.opacity = 1;
     this.twinkleRate = p.random(-0.01, 0.01);
