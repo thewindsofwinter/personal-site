@@ -3,29 +3,16 @@ import { colorTemperature2rgb } from 'color-temperature'
 export default function sketch(p){
     let canvas;
     let stars;
-    let sizeBracket;
-    let bracketCount;
 
     p.setup = () => {
       canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-      stars = [];
-
-      sizeBracket = Math.min(p.windowWidth / 5, p.windowHeight / 5);
-      bracketCount = 1;
+      stars = new Stars(p, Math.min(p.windowWidth / 5, p.windowHeight / 5), 1);
 
       p.noStroke();
     }
 
     p.draw = () => {
-      for(var i = 0; i < stars.length; i++) {
-        let star = stars[i];
-        star.twinkle();
-        star.display(p);
-      }
-
-      if(p.frameCount % 10 === 0) {
-        
-      }
+      stars.draw(p);
     }
 
     p.windowResized = () => {
@@ -106,20 +93,60 @@ function hslToRgb(h, s, l) {
 }
 
 class Stars {
-  constructor(sizeBracket, bracketCount) {
+  constructor(p, startSize, startCount) {
+    let sizeBracket = startSize;
+    let bracketCount = startCount;
+
     this.starList = [];
     while(sizeBracket > 1 && bracketCount < 200) {
       let createdCount = 0;
       while(createdCount < bracketCount) {
         let temp = (12 - Math.pow(p.random(1, 20736), 0.25)) * 2500;
-        stars.push(new Star(p, sizeBracket, temp));
+        let star;
+        let nonOverlap = false;
+        let tries = 0;
+
+        while(!nonOverlap && tries < 10) {
+          star = new Star(p, sizeBracket, temp);
+          nonOverlap = true;
+
+          for(let i = 0; i < this.starList.length; i++) {
+            let existing = this.starList[i];
+            let dx2 = (existing.x - star.x) * (existing.x - star.x);
+            let dy2 = (existing.y - star.y) * (existing.y - star.y);
+            let r = (existing.diameter / 2 + star.diameter / 2);
+
+            if(dx2 + dy2 < r * r) {
+              console.log("Caught!");
+              nonOverlap = false;
+              break;
+            }
+          }
+
+          tries++;
+        }
+
+        if(tries < 10) {
+          this.starList.push(star);
+        }
+        else {
+          console.log("timeout");
+        }
+
         createdCount++;
       }
 
       sizeBracket /= 2;
       bracketCount *= 4;
     }
+  }
 
+  draw(p) {
+    for(var i = 0; i < this.starList.length; i++) {
+      let star = this.starList[i];
+      star.twinkle();
+      star.display(p);
+    }
   }
 }
 
@@ -128,12 +155,13 @@ class Star {
     this.diameter = size;
     this.x = p.random(size, p.windowWidth - size);
     this.y = p.random(size, p.windowHeight - size);
-    this.rgb = colorTemperature2rgb(temp);
+
+    let tempRGB = colorTemperature2rgb(temp);
+    let tempHSL = rgbToHsl(tempRGB.red, tempRGB.green, tempRGB.blue);
+    this.rgb = hslToRgb(tempHSL[0], 1, 0.8);
+
     this.opacity = 255;
     this.twinkleRate = p.random(-0.1, 0.1);
-
-    console.log(this.x + " " + this.y + " " + this.twinkleRate);
-    console.log(this.rgb);
   }
 
   twinkle() {
@@ -152,7 +180,7 @@ class Star {
 
   display(p) {
     p.noStroke();
-    p.fill(this.rgb.red, this.rgb.green, this.rgb.blue, 255);
+    p.fill(this.rgb[0], this.rgb[1], this.rgb[2], 255);
     p.ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
