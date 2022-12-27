@@ -10,18 +10,17 @@ export default function sketch(p){
 
       sizeBracket = Math.min(p.windowWidth / 5, p.windowHeight / 5);
       bracketCount = 1;
-      while(sizeBracket > 1) {
-        let size = Math.random(sizeBracket, sizeBracket * 1.5);
-        stars = new Star(p, size);
-        sizeBracket *= (2 / 3);
-      }
+      stars.push(new Star(p, sizeBracket));
 
       p.noStroke();
     }
 
     p.draw = () => {
-      stars.twinkle();
-      stars.display(p);
+      for(var i = 0; i < stars.length; i++) {
+        let star = stars[i];
+        star.twinkle();
+        star.display(p);
+      }
 
       if(p.frameCount % 10 === 0) {
         
@@ -35,12 +34,15 @@ export default function sketch(p){
 
 class Star {
   constructor(p, size) {
-    this.x = Math.random(p.windowWidth);
-    this.y = Math.random(p.windowHeight);
+    this.x = p.random(p.windowWidth);
+    this.y = p.random(p.windowHeight);
     this.diameter = size;
-    this.color = p.color(Math.random(255), Math.random(255), 0);
+    this.color = p.color(p.random(255), p.random(255), 0);
     this.opacity = 1;
-    this.twinkleRate = Math.random(-0.01, 0.01);
+    this.twinkleRate = p.random(-0.01, 0.01);
+
+    console.log(this.x + " " + this.y + " " + this.twinkleRate);
+    console.log(this.color);
   }
 
   twinkle() {
