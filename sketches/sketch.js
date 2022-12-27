@@ -6,7 +6,7 @@ export default function sketch(p){
 
     p.setup = () => {
       canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-      stars = new Stars(p, Math.min(p.windowWidth / 5, p.windowHeight / 5), 1);
+      stars = new Stars(p, Math.min(p.windowWidth / 10, p.windowHeight / 10), 2);
 
       p.noStroke();
     }
@@ -98,10 +98,10 @@ class Stars {
     let bracketCount = startCount;
 
     this.starList = [];
-    while(sizeBracket > 1 && bracketCount < 200) {
+    while(sizeBracket > 1 && bracketCount < 100) {
       let createdCount = 0;
       while(createdCount < bracketCount) {
-        let temp = (12 - Math.pow(p.random(1, 20736), 0.25)) * 2500;
+        let temp = (12 - Math.pow(p.random(1, 14641), 0.25)) * 2500;
         let star;
         let nonOverlap = false;
         let tries = 0;
@@ -158,7 +158,7 @@ class Star {
 
     let tempRGB = colorTemperature2rgb(temp);
     let tempHSL = rgbToHsl(tempRGB.red, tempRGB.green, tempRGB.blue);
-    this.rgb = hslToRgb(tempHSL[0], 1, 0.8);
+    this.rgb = hslToRgb(tempHSL[0], tempHSL[1], Math.max(tempHSL[2], 0.8));
 
     this.opacity = 255;
     this.twinkleRate = p.random(-0.1, 0.1);
@@ -179,8 +179,17 @@ class Star {
   }
 
   display(p) {
-    p.noStroke();
-    p.fill(this.rgb[0], this.rgb[1], this.rgb[2], 255);
-    p.ellipse(this.x, this.y, this.diameter, this.diameter);
+    let color = p.color(this.rgb[0], this.rgb[1], this.rgb[2]);
+
+    for (let i = this.diameter; i >= this.diameter / 2; i--) {
+      let inter = p.map(i, this.diameter / 2, this.diameter, 0, 1);
+      let c = p.lerpColor(color, p.color("#232732"), inter);
+      p.noFill();
+      p.stroke(c);
+      p.ellipse(this.x, this.y, i, i);
+    }
+    
+    p.fill(color);
+    p.ellipse(this.x, this.y, this.diameter / 2, this.diameter / 2);
   }
 }
