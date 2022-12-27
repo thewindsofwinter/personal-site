@@ -12,10 +12,10 @@ export default function sketch(p){
 
       sizeBracket = Math.min(p.windowWidth / 5, p.windowHeight / 5);
       bracketCount = 1;
-      while(sizeBracket > 1) {
+      while(sizeBracket > 1 && bracketCount < 200) {
         let createdCount = 0;
         while(createdCount < bracketCount) {
-          let temp = p.random(6250000, 900000000);
+          let temp = (12 - Math.pow(p.random(1, 248832), 0.2)) * 2500;
           stars.push(new Star(p, sizeBracket, temp));
           createdCount++;
         }
@@ -47,9 +47,9 @@ export default function sketch(p){
 class Star {
   constructor(p, size, temp) {
     this.diameter = size;
-    this.x = p.random(size + 10, p.windowWidth - size - 10);
-    this.y = p.random(size + 10, p.windowHeight - size - 10);
-    this.rgb = colorTemperature2rgb(Math.sqrt(temp));
+    this.x = p.random(size, p.windowWidth - size);
+    this.y = p.random(size, p.windowHeight - size);
+    this.rgb = colorTemperature2rgb(temp);
     this.opacity = 255;
     this.twinkleRate = p.random(-0.1, 0.1);
 
