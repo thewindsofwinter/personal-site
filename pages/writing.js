@@ -8,14 +8,14 @@ export default function Projects() {
   return (
     <div className="bg-ink min-h-screen">
       <Head>
-        <title>Projects | Andy Tang</title>
+        <title>Writing | Andy Tang</title>
         <meta name="description" content="Software engineer, Stanford freshman, and stargazer. I seek to build tools that empower others to dream." />
       </Head>
 
       <StarField rate={0} />
 
       <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
-        <NavBar logo={true} projects={true} />
+        <NavBar logo={true} writing={true} />
       </div>
     </div>
   )

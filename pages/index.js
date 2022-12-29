@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import Stars from '../components/stars'
+import StarField from '../components/starfield'
 import NavBar from '../components/navbar'
 import Head from 'next/head'
 
@@ -13,21 +12,7 @@ export default function Home() {
         <meta name="description" content="Software engineer, Stanford freshman, and stargazer. I seek to build tools that empower others to dream." />
       </Head>
       
-      <div className="absolute left-0 top-0 w-screen h-screen z-0">
-        <Canvas
-          shadows={false}
-          camera={{
-            position: [0, 0, 1],
-          }}
-        >
-
-          <Stars size={0.003} multiplier={2.5} number={4000} />
-          <Stars size={0.005} multiplier={2.5} number={2500} />
-          <Stars size={0.008} multiplier={2.5} number={1000} />
-          <Stars size={0.012} multiplier={1} number={400} />
-          <Stars size={0.03} multiplier={1} number={100} />
-        </Canvas>
-      </div>
+      <StarField rate={1} />
 
       <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
         <NavBar logo={false} home={true} />

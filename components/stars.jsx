@@ -75,6 +75,8 @@ function hsvToRgb(h, s, v) {
 // Create 10,000 stars
 function Stars(props) {
   const numStars = props.number;
+  const multiplier = props.multiplier;
+  const size = props.size;
   const ref = useRef();
 
   const starTexture = useTexture('https://i.imgur.com/h1kVn4F.png');
@@ -108,14 +110,14 @@ function Stars(props) {
   
   
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta * props.multiplier / 100
-    ref.current.rotation.y -= delta * props.multiplier / 150
+    ref.current.rotation.x -= delta * multiplier / 100
+    ref.current.rotation.y -= delta * multiplier / 150
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} colors={colors} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial map={starTexture} transparent vertexColors size={props.size} sizeAttenuation={true} depthWrite={false} />
+        <PointMaterial map={starTexture} transparent vertexColors size={size} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )
