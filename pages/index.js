@@ -35,11 +35,11 @@ export default function Home() {
       <div className="wrapper relative z-5">
         <div className="splash flex flex-col justify-center items-center w-screen h-screen text-white">
           <div className="mx-auto sm:flex sm:flex-row sm:items-stretch sm:gap-6 sm:justify-center table-cell align-middle">
-            <div className="table pb-8 sm:pb-0 sm:pr-4 sm:border-r-8">
+            <div className="table pb-8 sm:pb-0 sm:pr-8 sm:border-r-8">
               <div className="table-cell align-middle">
                 <div className="text-center sm:text-right m-auto">
-                  <h1 className="title text-5xl sm:text-5xl md:text-6xl l:text-7xl xl:text-8xl pb-2">The sky is <span className="emph">vast</span>.</h1>
-                  <h3 className="subtitle text-2xl sm:text-2xl md:text-3xl l:text-4xl">Stay awhile and <span className="emph">wonder</span>.</h3>
+                  <h1 className="title text-5xl sm:text-5xl md:text-6xl l:text-7xl xl:text-8xl pb-2">The sky is <span className="emph">vast</span></h1>
+                  <h3 className="subtitle text-2xl sm:text-2xl md:text-3xl l:text-4xl xl:text-5xl">Stay awhile and <span className="emph">wonder</span></h3>
                 </div>
               </div>
             </div>

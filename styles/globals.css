@@ -35,7 +35,7 @@ a {
 }
 
 .header, .header img {
-  width: calc(min(35vw, 50vh));
+  width: calc(min(35vw, 40vh));
 }
 
 .emph {
@@ -45,18 +45,18 @@ a {
 .surname {
   color: #E34234;
   font-family: 'Montserrat', sans-serif !important;
-  width: calc(min(15vw, 22.5vh));
-  font-size: calc(min(13vw, 20vh));
+  width: calc(min(15vw, 18vh));
+  font-size: calc(min(13vw, 16vh));
   line-height: 1;
 }
 
 .spacing {
-  width: calc(min(5vw, 7.5vh));
+  width: calc(min(5vw, 6vh));
 }
 
 .logo {
   position: relative;
-  width: calc(min(7vw, 10vh));
+  width: calc(min(7vw, 8vh));
 }
 
 .icon-t {
