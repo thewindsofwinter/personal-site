@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color:#E34234;
+}
+
 * {
   box-sizing: border-box;
 }

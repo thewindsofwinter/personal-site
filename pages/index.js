@@ -32,6 +32,15 @@ export default function Home() {
         </Canvas>
       </div>
 
+      <div className="nav absolute z-5 left-1/2 top-0 transform -translate-x-1/2 bg-white bg-opacity-20 p-4 pt-2 rounded-b-lg	text-white text-2xl">
+        <div className = "flex flex-row justify-center items-center">
+
+        </div>
+          <a>Projects</a>
+          <a>Writing</a>
+          <a>Resume</a>
+      </div>
+
       <div className="wrapper relative z-5">
         <div className="splash flex flex-col justify-center items-center w-screen h-screen text-white">
           <div className="mx-auto sm:flex sm:flex-row sm:items-stretch sm:gap-6 sm:justify-center table-cell align-middle">
