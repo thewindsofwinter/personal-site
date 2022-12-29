@@ -32,13 +32,12 @@ export default function Home() {
         </Canvas>
       </div>
 
-      <div className="nav absolute z-5 left-1/2 top-0 transform -translate-x-1/2 bg-white bg-opacity-20 p-4 pt-2 rounded-b-lg	text-white text-2xl">
-        <div className = "flex flex-row justify-center items-center">
-
+      <div className="nav absolute z-5 left-1/2 top-0 transform -translate-x-1/2 bg-white bg-opacity-20 p-4 pt-2 rounded-b-lg">
+        <div className = "flex flex-row justify-center items-center gap-4 text-white text-3xl">
+          <a>[Projects]</a>
+          <a>[Writing]</a>
+          <a>[Resume]</a>
         </div>
-          <a>Projects</a>
-          <a>Writing</a>
-          <a>Resume</a>
       </div>
 
       <div className="wrapper relative z-5">
