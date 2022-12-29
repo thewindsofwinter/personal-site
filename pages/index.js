@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import Stars from '../components/stars'
+import NavBar from '../components/navbar'
 import Head from 'next/head'
 
 export default function Home() {
@@ -8,12 +9,8 @@ export default function Home() {
   return (
     <div className="bg-ink min-h-screen">
       <Head>
-        <title>Andy Tang</title>
+        <title>Home | Andy Tang</title>
         <meta name="description" content="Software engineer, Stanford freshman, and stargazer. I seek to build tools that empower others to dream." />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <div className="absolute left-0 top-0 w-screen h-screen z-0">
@@ -33,13 +30,7 @@ export default function Home() {
       </div>
 
       <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
-        <div className="nav relative left-1/2 top-0 transform -translate-x-1/2 text-white text-2xl sm:text-3xl">
-          <div className = "links flex flex-col sm:flex-row justify-end items-end gap-4 p-4 pt-2">
-            <a href="./projects">[Projects]</a>
-            <a href="./writing">[Writing]</a>
-            <a href="../resume.pdf">[Resume]</a>
-          </div>
-        </div>
+        <NavBar logo={false} home={true} />
 
         <div className="flex-grow splash flex flex-col justify-center items-center w-screen text-white">
           <div className="mx-auto sm:flex sm:flex-row sm:items-stretch sm:gap-6 sm:justify-center table-cell align-middle">
