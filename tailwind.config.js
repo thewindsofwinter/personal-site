@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ink': '#232732',
+        'ink': '#0E0E10',
         'starlight': '#EDEAE0',
       },
     },

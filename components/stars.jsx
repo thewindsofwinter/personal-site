@@ -106,25 +106,16 @@ function Stars(props) {
     return colors;
   })
   
-  const [sizes] = useState(() => {
-    let sizes = new Float32Array(numStars);
-    for(let i = 0; i < numStars; i++) {
-      sizes[i] = 0.005 + 0.01 * Math.random();
-    }
-
-    return sizes;
-  })
-  
   
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 100
-    ref.current.rotation.y -= delta / 150
+    ref.current.rotation.x -= delta * props.multiplier / 100
+    ref.current.rotation.y -= delta * props.multiplier / 150
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} colors={colors} sizes={sizes} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial map={starTexture} transparent vertexColors size={0.004} sizeAttenuation={true} depthWrite={false} />
+      <Points ref={ref} positions={sphere} colors={colors} stride={3} frustumCulled={false} {...props}>
+        <PointMaterial map={starTexture} transparent vertexColors size={props.size} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )

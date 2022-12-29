@@ -20,7 +20,10 @@ export default function Home() {
             position: [0, 0, 1],
           }}
         >
-          <Stars />
+          
+          <Stars size={0.003} multiplier={2} number={5000} />
+          <Stars size={0.006} multiplier={2} number={2000} />
+          <Stars size={0.01} multiplier={1} number={500} />
         </Canvas>
       </div>
 
