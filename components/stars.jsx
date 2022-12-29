@@ -10,13 +10,15 @@ function Stars(props) {
   const ref = useRef()
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }))
   const [colors] = useState(() => {
-    let colors = [];
+    let colors = new Float32Array(15000);
 
-    while(colors.length != 5000) {
+    for(let i = 0; i < 15000; i+=3) {
       let temperature = 2500 + Math.pow(Math.random(), 4) * (30000 - 2500); 
       let rgb = colorTemperature2rgb(temperature);
 
-      colors.push(<color r={rgb.red / 255.0} g={rgb.green / 255.0} b={rgb.blue / 255.0} />);
+      colors[i] = (rgb.red / 255.0);
+      colors[i + 1] = (rgb.green / 255.0);
+      colors[i + 2] = (rgb.blue / 255.0);
     }
 
     return colors;
@@ -27,27 +29,11 @@ function Stars(props) {
     ref.current.rotation.x -= delta / 10
     ref.current.rotation.y -= delta / 15
   })
-  
+
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points>
-        <bufferGeometry attach="geometry">
-          <bufferAttribute
-              attach="attributes-position"
-              count={sphere.length}
-              array={sphere}
-              itemSize={1}
-              usage={THREE.DynamicDrawUsage}
-            />
-            <bufferAttribute
-              attach="attributes-color"
-              count={colors.length}
-              array={colors}
-              itemSize={1}
-              usage={THREE.DynamicDrawUsage}
-            />
-        </bufferGeometry>
-        <pointsMaterial attach="material" vertexColors size={10} sizeAttenuation={false} />
+      <Points ref={ref} positions={sphere} colors={colors} stride={3} frustumCulled={false} {...props}>
+        <PointMaterial transparent vertexColors size={0.005} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )
