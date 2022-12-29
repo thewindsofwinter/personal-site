@@ -33,7 +33,7 @@ a {
   }
 }
 
-.logo, .logo img {
+.header, .header img {
   width: calc(min(50vw, 50vh));
 }
 
