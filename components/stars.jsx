@@ -74,7 +74,7 @@ function hsvToRgb(h, s, v) {
 
 // Create 10,000 stars
 function Stars(props) {
-  const numStars = 10000;
+  const numStars = props.number;
   const ref = useRef();
 
   const starTexture = useTexture('https://i.imgur.com/h1kVn4F.png');
