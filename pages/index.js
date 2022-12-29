@@ -34,17 +34,17 @@ export default function Home() {
 
       <div className="wrapper relative z-5">
         <div className="splash table-cell align-middle w-screen h-screen text-white">
-          <div className="grid grid-cols-2 gap-6 m-auto align-middle">
-            <div className="table w-full h-full pr-4 border-r-8">
+          <div className="flex flex-row items-stretch gap-6 justify-center align-middle">
+            <div className="table pr-4 border-r-8">
               <div className="table-cell align-middle">
                 <div className="text-right m-auto">
-                  <h1 className="title text-8xl pb-2">The sky is <span className="emph">vast</span>.</h1>
-                  <h3 className="subtitle text-4xl">Stay awhile and <span className="emph">wonder</span>.</h3>
+                  <h1 className="title text-3xl sm:text-5xl md:text-6xl l:text-7xl xl:text-8xl pb-2">The sky is <span className="emph">vast</span>.</h1>
+                  <h3 className="subtitle text-xl sm:text-2xl md:text-3xl l:text-4xl">Stay awhile and <span className="emph">wonder</span>.</h3>
                 </div>
               </div>
             </div>
 
-            <table className="mr-auto">
+            <table>
               <tbody>
                 <tr>
                   <th colSpan="4" className="header"><img src="../header.png"></img></th>
