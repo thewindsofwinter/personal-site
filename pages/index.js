@@ -10,6 +10,9 @@ export default function Home() {
       <Head>
         <title>Andy Tang</title>
         <meta name="description" content="Software engineer, Stanford freshman, and stargazer. I seek to build tools that empower others to dream." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
@@ -31,31 +34,28 @@ export default function Home() {
 
       <div className="wrapper relative z-5">
         <div className="header table-cell align-middle w-screen h-screen">
-          <table className="m-auto text-white text-3xl">
+          <table className="m-auto text-white">
             <tbody>
               <tr>
-                <th>Logo</th>
-                <th>N</th>
-                <th>D</th>
-                <th>Y</th>
+                <th colspan="4" class="logo"><img src="../header.png"></img></th>
               </tr>
               <tr>
-                <th>A</th>
+                <th class="surname">A</th>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <th>N</th>
-                <td></td>
+                <th class="surname">N</th>
+                <td class="spacing"></td>
                 <td>GitHub</td>
                 <td>Email</td>
               </tr>
               <tr>
-                <th>G</th>
-                <td></td>
-                <td>Discord</td>
-                <td>LinkedIn</td>
+                <th class="surname">G</th>
+                <td class="spacing"></td>
+                <td class="spacing">Discord</td>
+                <td class="spacing">LinkedIn</td>
               </tr>
             </tbody>
           </table>
