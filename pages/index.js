@@ -32,16 +32,16 @@ export default function Home() {
         </Canvas>
       </div>
 
-      <div className="nav absolute z-5 left-1/2 top-0 transform -translate-x-1/2 bg-white bg-opacity-20 p-4 pt-2 rounded-b-lg">
-        <div className = "flex flex-row justify-center items-center gap-4 text-white text-3xl">
-          <a>[Projects]</a>
-          <a>[Writing]</a>
-          <a>[Resume]</a>
+      <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
+        <div className="nav relative left-1/2 top-0 transform -translate-x-1/2 text-white text-2xl sm:text-3xl">
+          <div className = "links flex flex-col sm:flex-row justify-end items-end gap-4 p-4 pt-2">
+            <a href="./projects">[Projects]</a>
+            <a href="./writing">[Writing]</a>
+            <a href="../resume.pdf">[Resume]</a>
+          </div>
         </div>
-      </div>
 
-      <div className="wrapper relative z-5">
-        <div className="splash flex flex-col justify-center items-center w-screen h-screen text-white">
+        <div className="flex-grow splash flex flex-col justify-center items-center w-screen text-white">
           <div className="mx-auto sm:flex sm:flex-row sm:items-stretch sm:gap-6 sm:justify-center table-cell align-middle">
             <div className="table pb-8 sm:pb-0 sm:pr-8 sm:border-r-8">
               <div className="table-cell align-middle">
