@@ -12,6 +12,7 @@ body {
   margin: 0;
   font-family: 'DIN-1451', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.3;
 }
 
 a {
@@ -35,6 +36,10 @@ a {
 
 .header, .header img {
   width: calc(min(50vw, 50vh));
+}
+
+.emph {
+  color: #E34234;
 }
 
 .surname {
