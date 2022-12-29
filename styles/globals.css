@@ -23,6 +23,7 @@ body {
 
 a {
   color: inherit;
+  opacity: 0.9;
   text-decoration: none;
 }
 
@@ -55,13 +56,13 @@ a:hover {
 .surname {
   color: #E34234;
   font-family: 'Montserrat', sans-serif !important;
-  width: calc(min(15vw, 18vh));
-  font-size: calc(min(13vw, 16vh));
+  width: calc(min(16vw, 20vh));
+  font-size: calc(min(15vw, 16vh));
   line-height: 1;
 }
 
 .spacing {
-  width: calc(min(5vw, 6vh));
+  width: calc(min(5vw, 4vh));
 }
 
 .logo {
