@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Points, PointMaterial } from '@react-three/drei'
+import { Points, PointMaterial, useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 import * as random from 'maath/random'
 import { colorTemperature2rgb } from 'color-temperature'
@@ -75,7 +75,9 @@ function hsvToRgb(h, s, v) {
 // Create 10,000 stars
 function Stars(props) {
   const numStars = 10000;
-  const ref = useRef()
+  const ref = useRef();
+
+  const starTexture = useTexture('https://i.imgur.com/h1kVn4F.png');
   const [sphere] = useState(() => random.inSphere(new Float32Array(numStars), { radius: 1.5 }))
   const [colors] = useState(() => {
     let colors = new Float32Array(numStars * 3);
@@ -87,8 +89,8 @@ function Stars(props) {
       let tempHSV = rgbToHsv(tempRGB.red, tempRGB.green, tempRGB.blue);
       let rgb = hsvToRgb(tempHSV[0], tempHSV[1], 1);
 
-      if(tempHSV[1] > 0.3) {
-        rgb = hsvToRgb(tempHSV[0], 1, 1);
+      if(tempHSV[1] > 0.1) {
+        rgb = hsvToRgb(tempHSV[0], Math.min(tempHSV[1] * 1.5, 1), 1);
       }
       
       let defaultColor = new THREE.Color(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0);
@@ -104,16 +106,25 @@ function Stars(props) {
     return colors;
   })
   
+  const [sizes] = useState(() => {
+    let sizes = new Float32Array(numStars);
+    for(let i = 0; i < numStars; i++) {
+      sizes[i] = 0.005 + 0.01 * Math.random();
+    }
+
+    return sizes;
+  })
+  
   
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10
-    ref.current.rotation.y -= delta / 15
+    ref.current.rotation.x -= delta / 100
+    ref.current.rotation.y -= delta / 150
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} colors={colors} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent vertexColors size={0.01} sizeAttenuation={true} depthWrite={false} />
+      <Points ref={ref} positions={sphere} colors={colors} sizes={sizes} stride={3} frustumCulled={false} {...props}>
+        <PointMaterial map={starTexture} transparent vertexColors size={0.004} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )
