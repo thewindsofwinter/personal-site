@@ -39,12 +39,27 @@ a {
 
 .surname {
   color: #E34234;
-  font-family: 'Raleway', sans-serif !important;
-  width: calc(min(20vw, 20vh));
+  font-family: 'Montserrat', sans-serif !important;
+  width: calc(min(22.5vw, 22.5vh));
   font-size: calc(min(20vw, 20vh));
   line-height: 1;
 }
 
 .spacing {
   width: calc(min(7.5vw, 7.5vh));
+}
+
+.logo {
+  position: relative;
+  width: calc(min(10vw, 10vh));
+}
+
+.icon-t {
+  position: absolute;
+  top: 0;
+}
+
+.icon-b {
+  position: absolute;
+  bottom: 0;
 }
