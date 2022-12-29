@@ -72,19 +72,24 @@ function hsvToRgb(h, s, v) {
   return [ r * 255, g * 255, b * 255 ];
 }
 
-// Create 10,000 stars, 
+// Create 10,000 stars
 function Stars(props) {
-  const numStars = 100;
+  const numStars = 10000;
   const ref = useRef()
   const [sphere] = useState(() => random.inSphere(new Float32Array(numStars), { radius: 1.5 }))
   const [colors] = useState(() => {
     let colors = new Float32Array(numStars * 3);
 
     for(let i = 0; i < numStars * 3; i += 3) {
-      let temperature = 2500; 
+      // Star temperature distribution
+      let temperature = 2500 + Math.pow(Math.random(), 4) * (30000 - 2500); 
       let tempRGB = colorTemperature2rgb(temperature);
       let tempHSV = rgbToHsv(tempRGB.red, tempRGB.green, tempRGB.blue);
       let rgb = hsvToRgb(tempHSV[0], tempHSV[1], 1);
+
+      if(tempHSV[1] > 0.3) {
+        rgb = hsvToRgb(tempHSV[0], 1, 1);
+      }
       
       let defaultColor = new THREE.Color(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0);
       let sRGB = defaultColor.convertSRGBToLinear();
@@ -108,7 +113,7 @@ function Stars(props) {
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} colors={colors} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent vertexColors size={0.1} sizeAttenuation={true} depthWrite={false} />
+        <PointMaterial transparent vertexColors size={0.01} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )
