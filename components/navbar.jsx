@@ -13,7 +13,6 @@ function NavBar(props) {
             <div className = "links flex flex-col sm:flex-row justify-end sm:items-center items-center sm:items-end gap-4 m-4 mt-8">
                 {props.home ? <a className="emph" href="#">[Home]</a> : <a href="/">[Home]</a>}
                 {props.projects ? <a className="emph" href="#">[Projects]</a> : <a href="/projects">[Projects]</a>}
-                {props.writing ? <a className="emph" href="#">[Writing]</a> : <a href="/writing">[Writing]</a>}
                 <a href="../resume.pdf">[Resume]</a>
             </div>
         </div>

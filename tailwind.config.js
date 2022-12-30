@@ -10,6 +10,9 @@ module.exports = {
         'ink': '#0E0E10',
         'starlight': '#EDEAE0',
       },
+      boxShadow: {
+        'md': '0 0 15px -5px rgba(255, 255, 255, 1)'
+      }
     },
   },
   plugins: [],
