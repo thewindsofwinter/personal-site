@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import StarField from '../components/starfield'
 import NavBar from '../components/navbar'
 import Project from '../components/project'

@@ -1,5 +1,4 @@
-import { useState, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import Stars from './stars'
 
 function StarField(props) {
