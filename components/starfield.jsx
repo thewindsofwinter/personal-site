@@ -6,7 +6,7 @@ function StarField(props) {
     let starRate = props.rate;
 
     return (
-      <div className="absolute left-0 top-0 w-screen h-screen z-0">
+      <div className="absolute left-0 top-0 w-full h-screen z-0">
             <Canvas
             shadows={false}
             camera={{

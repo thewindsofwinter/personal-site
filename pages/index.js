@@ -14,10 +14,10 @@ export default function Home() {
       
       <StarField rate={1} />
 
-      <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
+      <div className = "wrapper relative w-full h-screen z-5 flex flex-col">
         <NavBar logo={false} home={true} />
 
-        <div className="flex-grow splash flex flex-col justify-center items-center w-screen text-white">
+        <div className="flex-grow splash flex flex-col justify-center items-center w-full text-white">
           <div className="mx-auto sm:flex sm:flex-row sm:items-stretch sm:gap-6 sm:justify-center table-cell align-middle">
             <div className="table pb-8 sm:pb-0 sm:pr-8 sm:border-r-8">
               <div className="table-cell align-middle">

@@ -14,7 +14,7 @@ export default function Projects() {
 
       <StarField rate={0} />
 
-      <div className = "wrapper relative w-screen h-screen z-5 flex flex-col">
+      <div className = "wrapper relative w-full h-screen z-5 flex flex-col">
         <NavBar logo={true} writing={true} />
       </div>
     </div>
