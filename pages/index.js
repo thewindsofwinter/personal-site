@@ -2,6 +2,8 @@ import { useState, useRef } from 'react'
 import StarField from '../components/starfield'
 import NavBar from '../components/navbar'
 import Head from 'next/head'
+import Image from 'next/image'
+import Title from '../public/header.png'
 
 export default function Home() {
 
@@ -32,7 +34,7 @@ export default function Home() {
               <table>
                 <tbody>
                   <tr>
-                    <th colSpan="4" className="header"><img src="../header.png"></img></th>
+                    <th colSpan="4" className="header"><Image src={Title} alt="Large 'ANDY' in white DIN Mono, with 'T' stylized as telescope superimposed over the 'A'" /></th>
                   </tr>
                   <tr>
                     <th className="surname">A</th>
