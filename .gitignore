@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # Ignore sketches now that they aren't being used
-/sketches
-/svg
+/sketches/
+/svg/
