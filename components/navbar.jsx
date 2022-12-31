@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import Header from '../public/fullhead.png'
 
 function NavBar(props) {
     let showLogo = props.logo;
@@ -10,7 +8,7 @@ function NavBar(props) {
             {showLogo ?
                 <div className="h-12 m-4">
                     <Link href="/">
-                        <Image className="w-full h-full" src={Header} alt="Header with 'Andy Tang' written in white DIN Mono, with a stylized T as telescope in orange superimposed atop the 'A'" />
+                        <img src='../public/fullhead.png' alt="Header with 'Andy Tang' written in white DIN Mono, with a stylized T as telescope in orange superimposed atop the 'A'" />
                     </Link>
                 </div> 
                 
