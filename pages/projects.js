@@ -33,6 +33,7 @@ function useWindowSize() {
   
 
 export default function Projects() {
+  let width = useWindowSize().width;
 
   return (
     <div className="bg-ink min-h-screen">
@@ -46,7 +47,7 @@ export default function Projects() {
       <div className = "wrapper relative w-full min-h-screen z-5 flex flex-col">
         <NavBar logo={true} projects={true} />
 
-        <ProjectList small={useWindowSize() != undefined && useWindowSize().width < 500} />
+        <ProjectList small={width != undefined && (width < 512 || (width > 800 && width < 1080))} />
       </div>
     </div>
   )
