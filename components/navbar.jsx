@@ -8,7 +8,7 @@ function NavBar(props) {
             {showLogo ?
                 <div className="h-12 m-4">
                     <Link href="/">
-                        <img src='../public/fullhead.png' alt="Header with 'Andy Tang' written in white DIN Mono, with a stylized T as telescope in orange superimposed atop the 'A'" />
+                        <img className='w-auto h-full' src='../fullhead.png' alt="Header with 'Andy Tang' written in white DIN Mono, with a stylized T as telescope in orange superimposed atop the 'A'" />
                     </Link>
                 </div> 
                 

@@ -1,7 +1,36 @@
 import StarField from '../components/starfield'
 import NavBar from '../components/navbar'
-import Project from '../components/project'
+import ProjectList from '../components/project'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
+
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+
+    return windowSize;
+  }
+  
 
 export default function Projects() {
 
@@ -17,14 +46,7 @@ export default function Projects() {
       <div className = "wrapper relative w-full min-h-screen z-5 flex flex-col">
         <NavBar logo={true} projects={true} />
 
-        <div className="flex-grow splash flex flex-row flex-wrap justify-center items-center w-4/5 mx-auto mt-8 text-white">
-            <Project project="ANIMA" />
-            <Project project="USNCO" />
-            <Project project="JHMC" />
-            <Project project="Multi24" />
-            <Project project="Azimuth" />
-            <Project project="Fortune-ate" />
-        </div>
+        <ProjectList small={useWindowSize() != undefined && useWindowSize().width < 500} />
       </div>
     </div>
   )
