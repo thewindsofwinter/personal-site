@@ -103,7 +103,7 @@ function Stars(props) {
       colors[i + 2] = sRGB.b;
     }
 
-    console.log(colors);
+    // console.log(colors);
 
     return colors;
   })

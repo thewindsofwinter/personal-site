@@ -4,7 +4,7 @@ import projectData from '../projects.json';
 function Badge(props) {
     let type = props.type % 10;
     let classification = (props.type - type) / 10;
-    console.log(classification);
+    // console.log(classification);
 
     let classes = ["Internship", "Hackathon", "Research", "Extracurricular", "Personal"];
 
@@ -30,7 +30,7 @@ function Badge(props) {
 }
 
 function Project(props) {
-    console.log(props);
+    // console.log(props);
     let project = projectData[props.project];
     let height = 400 * project.h / project.w;
 
@@ -75,7 +75,7 @@ function Project(props) {
 }
 
 function ProjectList(props) {
-    console.log(Object.keys(projectData))
+    // console.log(Object.keys(projectData))
     return (
         <div className="flex-grow splash flex flex-row flex-wrap justify-center items-center w-4/5 mx-auto mt-8 text-white">
             {Object.keys(projectData).map((project) => (
