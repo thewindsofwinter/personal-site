@@ -4,7 +4,7 @@ function NavBar(props) {
     let showLogo = props.logo;
 
     return (
-        <div className="nav relative left-1/2 top-0 transform -translate-x-1/2 flex lg:flex-row lg:justify-between flex-col items-center text-white text-2xl sm:text-3xl">
+        <div className="nav max-w-6xl relative left-1/2 top-0 transform -translate-x-1/2 flex lg:flex-row lg:justify-between flex-col items-center text-white text-2xl sm:text-3xl">
             {showLogo ?
                 <div className="h-12 m-4">
                     <Link href="/">
