@@ -1,7 +1,7 @@
 Seeing Deeper
 
 > We have to learn that these are the kinds of disciplines in the field of science that you have to learn – to know when you know and when you don't know, and what it is you know and what it is you don't know.  You've go to be very careful not to confuse yourself.
->- Richard Feynman (https://calteches.library.caltech.edu/35/2/PointofView.htm)
+>- Richard Feynman ({https://calteches.library.caltech.edu/35/2/PointofView.htm})
 
 What makes a good researcher? I've noticed that many researchers I admire have a common level of 
 meticulousness. These researchers are smart, but what makes them great is this care, a care that 
@@ -20,7 +20,7 @@ falls apart with rigorous experimentation.
 
 A good example of this in robotics, my field of study, are questions related to behavior cloning.
 Recently, Seohong wrote a good summary of some of these questions in the following blog post: 
-https://seohong.me/blog/behavioral-cloning-mystery/. Every problem mentioned here is well-known,
+{https://seohong.me/blog/behavioral-cloning-mystery/}. Every problem mentioned here is well-known,
 but often colloquial explanations have been offered which require further scrutiny. For example,
 history-conditioned policies are suggested to be hard because of causal confusion, a phenomenon 
 where a model overfits to spurious correlations. However, this is not the case in diffusion 
@@ -43,4 +43,4 @@ meticulousness of mind is something which can be improved through practice, much
 practical aspects of excellence*. We should cultivate this virtue and work with others who value 
 such insight, to see one level deeper than before.
 
-*For an article aligned with my thoughts on excellence, see <The Mundanity of Excellence> https://www.jstor.org/stable/202063
+*For an article aligned with my thoughts on excellence, see <The Mundanity of Excellence> {https://www.jstor.org/stable/202063}
