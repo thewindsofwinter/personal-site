@@ -17,7 +17,7 @@ function NavBar(props) {
 
             <div className = "links flex flex-col sm:flex-row justify-end sm:items-center items-center sm:items-end gap-4 m-4 mt-8">
                 {props.home ? <Link className="emph" href="#">[Home]</Link> : <Link href="/">[Home]</Link>}
-                {props.projects ? <Link className="emph" href="#">[Projects]</Link> : <Link href="/projects">[Projects]</Link>}
+                <a href="https://scholar.google.com/citations?user=vlwg0MQAAAAJ&hl=en" target="_blank" rel="noreferrer">[Scholar]</a>
                 <Link href="/resume.pdf">[Resume]</Link>
             </div>
         </div>
