@@ -13,7 +13,7 @@
     "@react-three/fiber": "^8.9.1",
     "color-temperature": "^0.2.7",
     "maath": "^0.4.2",
-    "next": "^13.0.0",
+    "next": "^15.5.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-p5-wrapper": "^3.4.0",
