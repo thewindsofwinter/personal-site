@@ -1,0 +1,46 @@
+Seeing Deeper
+
+> We have to learn that these are the kinds of disciplines in the field of science that you have to learn – to know when you know and when you don't know, and what it is you know and what it is you don't know.  You've go to be very careful not to confuse yourself.
+>- Richard Feynman (https://calteches.library.caltech.edu/35/2/PointofView.htm)
+
+What makes a good researcher? I've noticed that many researchers I admire have a common level of 
+meticulousness. These researchers are smart, but what makes them great is this care, a care that 
+does away with comforting illusions. In a sense, they are on a diametrically opposite pole of the 
+distribution from conspiracy theorists. For consipracy theorists, the part of the brain which 
+generates comforting illusions acts in overdrive. When I envision a great scientist, I envision 
+someone who is on guard against these illusions, someone who overcomes themselves to better
+perceive the world.
+
+In a sense, babies have one ingredient of this, in that they question the foundations of any given 
+statement. Feynman again: you can be satisfied that "ice is slippery", or go one level deeper and 
+try to understand the question of why ice is slippery. To be maximally scientific, we should understand 
+the phenomenon down to fundamental laws we accept to be true or fundamental measurements of experiment.
+The temptation here is to offer a colloquial explanation which maintains the semblance of truth which 
+falls apart with rigorous experimentation.
+
+A good example of this in robotics, my field of study, are questions related to behavior cloning.
+Recently, Seohong wrote a good summary of some of these questions in the following blog post: 
+https://seohong.me/blog/behavioral-cloning-mystery/. Every problem mentioned here is well-known,
+but often colloquial explanations have been offered which require further scrutiny. For example,
+history-conditioned policies are suggested to be hard because of causal confusion, a phenomenon 
+where a model overfits to spurious correlations. However, this is not the case in diffusion 
+policies, which exhibit a separate problem which I resolve in a previous paper (Torne et al. 2025).
+Even after doing such research, I am still astonished at how many of these paradoxes that 
+Seohong mentions I simply took for granted.
+
+I consider researchers as above more "principled" or theoretical researchers. While many researchers 
+don't fit this mold, I think the meticulousness mentioned above is a fundamental component of good 
+research of any style. Indeed, I propose that where we apply such meticulousness is the key distingushing 
+factor of good research styles. For example, more "empirical" or practical/systems researchers often 
+apply no less meticulousness in robotics understanding normalization, action spaces, and various 
+foundational components of the robot policy while designing practical systems which accomplish state-of-the-art 
+tasks in robotic manipulation. Here, we can't isolate one problem like the theoretical researchers, 
+but meticulousness and taste helps us understand which components of the policy are truly crucial for 
+improving performance and where potential bottlenecks lie in terms of real-world applicability.
+
+What does this mean for us aspiring researchers? While genius is uncontrollable, cultivating this 
+meticulousness of mind is something which can be improved through practice, much like the other 
+practical aspects of excellence*. We should cultivate this virtue and work with others who value 
+such insight, to see one level deeper than before.
+
+*For an article aligned with my thoughts on excellence, see <The Mundanity of Excellence> https://www.jstor.org/stable/202063
