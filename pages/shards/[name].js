@@ -67,7 +67,7 @@ export default function ShardPage({ title, meta, blocks }) {
         <title>{title}</title>
       </Head>
 
-      <main className="max-w-[768px] mx-auto px-5 py-16 min-h-screen flex flex-col justify-center text-justify">
+      <main className="max-w-[768px] mx-auto px-5 py-16 min-h-screen flex flex-col justify-center text-left">
         <h1 className="text-3xl mb-2 text-left">{title}</h1>
         {meta ? <MetaByline meta={meta} /> : null}
         {blocks.length > 0 ? (
@@ -84,14 +84,14 @@ export default function ShardPage({ title, meta, blocks }) {
                         <RichText text={part.content} />
                       </footer>
                     ) : (
-                      <p key={partIndex} className="text-justify whitespace-pre-wrap m-0">
+                      <p key={partIndex} className="text-left whitespace-pre-wrap m-0">
                         <RichText text={part.content} />
                       </p>
                     )
                   )}
                 </blockquote>
               ) : (
-                <p key={index} className="m-0">
+                <p key={index} className="m-0 text-left">
                   <RichText text={block.content} />
                 </p>
               )
