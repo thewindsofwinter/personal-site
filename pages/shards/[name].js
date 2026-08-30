@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import { getShard, getShardSlugs } from '../../lib/shards'
 
@@ -33,7 +34,33 @@ function RichText({ text }) {
   )
 }
 
-export default function ShardPage({ title, blocks }) {
+function MetaByline({ meta }) {
+  const [open, setOpen] = useState(false)
+  const summary = `${meta.version}, written on ${meta.date}`
+  const canExpand = Boolean(meta.thanks)
+
+  if (!canExpand) {
+    return <p className="shard-meta">{summary}</p>
+  }
+
+  return (
+    <button
+      type="button"
+      className="shard-meta shard-meta-toggle"
+      aria-expanded={open}
+      onClick={() => setOpen((value) => !value)}
+    >
+      <span>{summary}</span>
+      {open ? (
+        <span className="shard-meta-thanks">
+          thanks to {meta.thanks} for helpful feedback on this work
+        </span>
+      ) : null}
+    </button>
+  )
+}
+
+export default function ShardPage({ title, meta, blocks }) {
   return (
     <div className="bg-ink text-starlight min-h-screen font-['DIN-Mono']">
       <Head>
@@ -41,22 +68,20 @@ export default function ShardPage({ title, blocks }) {
       </Head>
 
       <main className="max-w-[768px] mx-auto px-5 py-16 min-h-screen flex flex-col justify-center text-justify">
-        <h1 className="text-3xl mb-8 text-left">{title}</h1>
+        <h1 className="text-3xl mb-2 text-left">{title}</h1>
+        {meta ? <MetaByline meta={meta} /> : null}
         {blocks.length > 0 ? (
-          <div className="text-lg leading-relaxed space-y-6">
+          <div className={`text-lg leading-relaxed space-y-6 ${meta ? 'mt-8' : ''}`}>
             {blocks.map((block, index) =>
               block.type === 'quote' ? (
                 <blockquote
                   key={index}
-                  className="border-l-2 border-starlight/40 pl-4 text-starlight/80 italic space-y-2"
+                  className="shard-quote border-l-2 border-starlight/40 pl-4 text-starlight/80 italic space-y-2"
                 >
                   {block.parts.map((part, partIndex) =>
                     part.type === 'byline' ? (
-                      <footer
-                        key={partIndex}
-                        className="block text-right not-italic text-starlight/70"
-                      >
-                        — <RichText text={part.content} />
+                      <footer key={partIndex} className="shard-byline">
+                        <RichText text={part.content} />
                       </footer>
                     ) : (
                       <p key={partIndex} className="text-justify whitespace-pre-wrap m-0">
@@ -91,6 +116,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       title: shard.title,
+      meta: shard.meta,
       blocks: shard.blocks,
     },
   }
