@@ -95,7 +95,7 @@ a:hover {
 }
 
 .shard-quote {
-  overflow: auto;
+  display: flow-root;
 }
 
 .shard-byline {
