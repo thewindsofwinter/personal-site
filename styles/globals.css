@@ -93,3 +93,49 @@ a:hover {
   width: 18rem;
   height: 22rem;
 }
+
+.shard-quote {
+  overflow: auto;
+}
+
+.shard-byline {
+  float: right;
+  width: 50%;
+  margin: 0.5rem 0 0;
+  text-align: right;
+  font-style: normal;
+  color: rgba(237, 234, 224, 0.7);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.shard-byline::before {
+  content: '— ';
+}
+
+.shard-meta {
+  margin: 0 0 0.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(237, 234, 224, 0.7);
+  font: inherit;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.shard-meta-toggle {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.shard-meta-toggle:hover {
+  color: #E34234;
+}
+
+.shard-meta-thanks {
+  display: block;
+  margin-top: 0.25rem;
+}
