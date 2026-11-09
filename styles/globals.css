@@ -140,6 +140,21 @@ a:hover {
   margin-top: 0.25rem;
 }
 
+.shard-page {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.shard-link {
+  color: #E34234;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
 .shard-fn-ref,
 .shard-fn-back {
   color: #E34234;
@@ -156,6 +171,10 @@ a:hover {
 .shard-footnotes {
   color: rgba(237, 234, 224, 0.85);
   scroll-margin-top: 2rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .shard-footnotes [id^="fn-"] {

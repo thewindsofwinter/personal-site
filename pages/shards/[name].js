@@ -21,7 +21,7 @@ function RichText({ text }) {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="text-[#E34234] opacity-100 underline underline-offset-2"
+              className="shard-link"
             >
               {linkLabel(href)}
             </a>
@@ -87,7 +87,7 @@ export default function ShardPage({ title, meta, blocks, footnotes }) {
         <title>{title}</title>
       </Head>
 
-      <main className="max-w-[768px] mx-auto px-5 py-16 min-h-screen flex flex-col justify-center text-left">
+      <main className="shard-page max-w-[768px] mx-auto px-5 py-16 min-h-screen flex flex-col justify-center text-left w-full min-w-0">
         <h1 className="text-3xl mb-2 text-left">{title}</h1>
         {meta ? <MetaByline meta={meta} /> : null}
         {blocks.length > 0 ? (
