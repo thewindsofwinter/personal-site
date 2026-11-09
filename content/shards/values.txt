@@ -1,0 +1,102 @@
+A Primer on Values
+~ 11-09-26 v0
+
+> Abstract: I'm trying to understand why I find certain ideas "elegant" or "inelegant", or startup ideas 
+> "appealing" or "unappealing". In the end, I think the source of this taste comes from the values we want
+> to promote in our society. Outside the things common to all startups (the sense of accomplishment from 
+> creating something from nothing, monetary reward, etc.) I think the joy of creation comes from working
+> to promote and sustain values conducive to good living and prosperity: things such as rugged individualism,
+> optimism, pragmatism, and equality of opportunity. Two large forces serve to muddle this currently: the
+> impending implementation of AGI (a civilizational-scale force that feels inevitable to fall in some form)
+> and the accelerating culture of "get rich fast" in startups. This piece attempts to consider what
+> technologies advance our current value system mostly in isolation from these themes as a starting point.
+
+There is a belief in various academic circles that the idea of the “American Dream”— that is, the achievement 
+of success through hard work and your own merit—exists primarily due to the frontier nation of our country[^1]. 
+Citizens of other nations fled pre-existing class structures and oppression, finding a place in the United 
+States due to the lack of an entrenched aristocracy or class system. The vast frontier of fertile land and 
+natural resources allowed immigrants to imagine instantly achieving their fortune, for example in the 
+California Gold Rush.
+
+A key challenge in the present day is the “disappearing frontier.” The end of the Space Race, as well as the 
+completion of American territorial expansion, resulted additionally in a closing of the “frontier of the mind” 
+or “frontiers of thought”. This can be seen in the stagnation of nuclear power, and decrease in transformative 
+innovation outside the information technology sector[^2]. In the period 1900-2000, the world underwent 
+order-of-magnitude changes in communications, mass transit, health, agricultural efficiency, and manufactured 
+goods. Outside of computing technology, the world has made no fundamental advances since then in the period 
+2000-2025. We have moved from a regime of “growing” a pie of raw materials and energy to squeezing out crumbs 
+by efficiently allocating the same. Articulating a coherent vision for optimism in the next century is 
+therefore of critical importance for the innovator.
+
+My grandparents witnessed over their lifetime an increase of literacy from near-zero to one hundred percent, 
+the eradication of preventable disease, and an increase in wealth a thousandfold (from peasantry on the brink 
+of starvation to a comfortable city life), not to mention modern conveniences like air conditioning, plumbing, 
+and television. When I was eleven, I went to the ancestral farm of my family and got a brief taste of the 
+progress of the past hundred years. What can we promise our children?
+
+Below I briefly attempt to describe the difference between “progressive” and “regressive” technology. The 
+former emphasize contact with reality, strengthen American values[^3], and elevate the human spirit. The latter 
+encourages retreat from reality, erode American values, and isolate and crush the human spirit. 
+
+I begin from the economic writings of Vaclav Smil and Yi Wen. Smil[^4] describes energy per person as a key 
+growth factor for improving the human condition. Technologies can either elevate this (e.g. further energy 
+generation, fusion power) or attempt to ration it (e.g. moving to renewables). Similarly, Yi Wen[^5] describes a 
+“New Stage Theory” of industrialization progressing from proto-industry to light industry, heavy industry, 
+and the welfare state. In each stage, the savings from the previous stage can either be consumed by the 
+people or reinvested into the next stage. Premature consumption results in a weak state, exemplified by 
+the Greek pension debt crisis and perhaps also the imminent debt crisis in my home state of Illinois. 
+
+Consumption versus investment, redistribution versus growth—these are the key elements in my mind that 
+distinguish “regressive” versus “progressive” technology. This occurs at both the individual and societal 
+scale. For example: in the youth of our nation, more than one in ten know of a friend in a relationship with 
+an AI. Even at Stanford, we question the value of intellectual study in the face of a nebulous AGI. On the 
+other hand, AGI promises to grow the pie even further—the victory of humanity over disease, an era of 
+abundance. Nowadays, startup culture takes the form of a “land grab” or “fear of missing out”—we will grab 
+the money now, since we won’t be able to in the future and get rich quick. But will money mean anything in 
+the face of AGI? All is committed to the construction of this egovore whose good or evil is unquestioned. 
+The questions of the future will be relationships between humans, who gets to wield the hand of God (note 
+the inherent redistributive logic here).
+
+I am not yet sure whether AGI is progressive or regressive technology, although you can clearly see 
+progressive and regressive elements within its development.
+
+Let’s talk about things that I find more clearly progressive or regressive. VR and social media are fairly 
+clear examples of regressive technology, encouraging isolation and distance from reality. Space exploration—
+the development of the Moon, Mars, and near-Earth asteroids—seems clearly a progressive technology and the 
+re-establishment of a frontier we should chase after. I believe the “strenuous life” as described by 
+Roosevelt is a key factor in producing the spirit of independence, opportunity, optimism, and pragmatism 
+characteristic of the American Dream. In its absence, I fear the degeneration of our values to something 
+unrecognizable today.
+
+I conclude with some critical technologies that may be progressive or regressive in implementation—the 
+development of these may be the greatest challenge of our time. The problem of AGI goes without saying. 
+Additionally, the development of cryogenics and longevity pose interesting questions—if development of 
+certain technologies (especially space travel) takes centuries, what incentives will the ability to “skip” 
+portions of it produce? Will there be children of the future?
+
+Related to this are advances in brain-computer interfaces and transhumanism. It appears clear that the 
+ability to think faster and more deeply than currently possible due to our biology is a key capability 
+to maintain even a sense of “personhood” and independence in an era of AGI. Possibilities include a 
+“singularity” (which is contrary to American values), a society of superhuman agents, or some human-AI 
+hybrid system. 
+
+Finally there is the question of automation, including in manufacturing. On the one hand, this promises 
+the ability to make things faster and better from initial idea. On the other, this displaces lots of labor, 
+and I wonder whether a society where every person is a one-man corporation is a society that we would like 
+to promote. However, I believe large-scale automation of manufacturing, especially of the “new industrial 
+trinity” will be essential. This includes next-generation energy sources (thorium fission, fusion, 
+large-scale solar / upper-atmosphere and space-based solar, efficient batteries and rocket fuel), 
+transportation (e.g. spacecraft, space elevators), and infrastructure (e.g. ecological cycling, 
+radiation shielding, agricultural and medical advancements). 
+
+This is far from a detailed manifesto[^6]. But the question “what prosperity and values can we promise our 
+grandchildren” is of critical importance to consider. This is a call for reflection: in our hearts, there 
+needs to be an *AI 2047* or *Machines of Loving Grace* specifically geared towards propagating our American 
+values: liberty, opportunity, optimism, and pragmatic enterprise.
+
+[^1] See for example *America Against America* by Yang Huning, as well as the 1893 Frontier Thesis: {https://www.historians.org/resource/the-significance-of-the-frontier-in-american-history/}
+[^2] For example: {https://wtfhappenedin1971.com/}. Note that this may not apply to other developing nations.
+[^3] I define American values here as: individualism/pluralism, equality of opportunity/under the law, optimism and industry, and pragmatism. These are up for debate, but I think losing even one of these could be catastrophic/transformative for our society.
+[^4] See *Energy and Civilization* {https://sidoli.w.waseda.jp/Smil_2017_Energy_and_Civilization_04.pdf}
+[^5] See *The Making of an Economic Superpower* {https://english.ckgsb.edu.cn/sites/default/files/files/Final%20version%209789814733731_YiWen.pdf}
+[^6] Some may question whether thinking about these values are worthwhile in the first place. However, my personal belief is I will work harder and create better solutions if I start with the motivation for why I want to partake in/produce technological change.

@@ -7,28 +7,48 @@ function linkLabel(href) {
 }
 
 function RichText({ text }) {
-  const parts = text.split(/(\{[^}]+\})/g)
+  const parts = text.split(/(\{[^}]+\}|\[\^[^\]]+\]|\*[^*]+\*)/g)
 
   return (
     <>
       {parts.map((part, index) => {
-        const match = part.match(/^\{([^}]+)\}$/)
-        if (!match) {
-          return <span key={index}>{part}</span>
+        const linkMatch = part.match(/^\{([^}]+)\}$/)
+        if (linkMatch) {
+          const href = linkMatch[1]
+          return (
+            <a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#E34234] opacity-100 underline underline-offset-2"
+            >
+              {linkLabel(href)}
+            </a>
+          )
         }
 
-        const href = match[1]
-        return (
-          <a
-            key={index}
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className="text-[#E34234] opacity-100 underline underline-offset-2"
-          >
-            {linkLabel(href)}
-          </a>
-        )
+        const footnoteMatch = part.match(/^\[\^([^\]]+)\]$/)
+        if (footnoteMatch) {
+          const id = footnoteMatch[1]
+          return (
+            <a
+              key={index}
+              href={`#fn-${id}`}
+              id={`fnref-${id}`}
+              className="shard-fn-ref"
+            >
+              <sup>[{id}]</sup>
+            </a>
+          )
+        }
+
+        const italicMatch = part.match(/^\*([^*]+)\*$/)
+        if (italicMatch) {
+          return <em key={index}>{italicMatch[1]}</em>
+        }
+
+        return <span key={index}>{part}</span>
       })}
     </>
   )
@@ -60,7 +80,7 @@ function MetaByline({ meta }) {
   )
 }
 
-export default function ShardPage({ title, meta, blocks }) {
+export default function ShardPage({ title, meta, blocks, footnotes }) {
   return (
     <div className="bg-ink text-starlight min-h-screen font-['DIN-Mono']">
       <Head>
@@ -98,6 +118,19 @@ export default function ShardPage({ title, meta, blocks }) {
             )}
           </div>
         ) : null}
+
+        {footnotes.length > 0 ? (
+          <section className="shard-footnotes mt-12 pt-6 border-t border-starlight/20 text-base leading-relaxed space-y-3">
+            {footnotes.map((footnote) => (
+              <p key={footnote.id} id={`fn-${footnote.id}`} className="m-0">
+                <a href={`#fnref-${footnote.id}`} className="shard-fn-back">
+                  <sup>[{footnote.id}]</sup>
+                </a>{' '}
+                <RichText text={footnote.content} />
+              </p>
+            ))}
+          </section>
+        ) : null}
       </main>
     </div>
   )
@@ -118,6 +151,7 @@ export async function getStaticProps({ params }) {
       title: shard.title,
       meta: shard.meta,
       blocks: shard.blocks,
+      footnotes: shard.footnotes,
     },
   }
 }

@@ -43,7 +43,7 @@ and design their policy in a principled manner.
 
 Can we get closer to this ideal of clarity? While genius is uncontrollable, cultivating this 
 meticulousness of mind is something which can be improved through practice, much like the other 
-practical aspects of excellence*. We should cultivate this virtue and work with others who value 
+practical aspects of excellence[^1]. We should cultivate this virtue and work with others who value 
 such insight, to see one level deeper than before.
 
-*For an article aligned with my thoughts on excellence, see <The Mundanity of Excellence> {https://www.jstor.org/stable/202063}
+[^1] For an article aligned with my thoughts on excellence, see <The Mundanity of Excellence> {https://www.jstor.org/stable/202063}

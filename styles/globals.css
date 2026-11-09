@@ -139,3 +139,25 @@ a:hover {
   display: block;
   margin-top: 0.25rem;
 }
+
+.shard-fn-ref,
+.shard-fn-back {
+  color: #E34234;
+  opacity: 1;
+  text-decoration: none;
+  scroll-margin-top: 2rem;
+}
+
+.shard-fn-ref:hover,
+.shard-fn-back:hover {
+  text-decoration: underline;
+}
+
+.shard-footnotes {
+  color: rgba(237, 234, 224, 0.85);
+  scroll-margin-top: 2rem;
+}
+
+.shard-footnotes [id^="fn-"] {
+  scroll-margin-top: 2rem;
+}
